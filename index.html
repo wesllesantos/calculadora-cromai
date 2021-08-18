@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minha calculadora</title>
+    <!-- Carregando o estilo da calculadora  -->
+    <style> 
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        .fundo{
+            background-image: linear-gradient(45deg,DeepPink, DarkSlateBlue);
+            height: 100vh;
+            color: white;
+            font-family: Verdana, Arial, Helvetica, sans-serif;
+            text-align: center;
+         }
+
+         .calculadora{
+            position: absolute;
+             background-color: rgba(0, 0, 0, 0.6);
+             top: 50%;
+             left: 50%;
+             transform: translate(-50%,-50%);
+             border-radius: 15px;
+             padding: 20px;
+         }
+
+         .botao{
+            font-family: Verdana, Arial, Helvetica, sans-serif;
+            width: 50px;
+            height: 50px;
+            font-size: 20px; 
+            cursor: pointer;
+            margin: 3px;
+            background-image: linear-gradient(45deg,DeepPink, DarkSlateBlue);
+            border: none;
+            color: white;
+         }
+
+    </style>  <!-- fim  do estilo da calculadora  -->
+</head>
+                 <!-- INICIO CONTEUDO  -->
+<body>
+    <div class="triangulo"></div>
+
+
+
+    <div class="fundo">
+        <div class="calculadora">
+    <h3 style="font-family:Verdana, Arial, Helvetica, sans-serif;">Minha calculadora</h3><br>
+    <img src="triangulo.png" style="height: 150px;" alt="img-triangulo"></a><br><br>
+    Cateto (a)
+    <input id="n1" type="number" /> <br><br>
+     Cateto (b)
+    <input id="n2" type="number" /> <br><br>
+    Hipotenusa (c)
+    <input id="n3" type="number" /> <br><br>
+     
+    <td rowspan="2"><button class="botao" style="width: 160px;" onclick="calcular()">Calcular</button></td>     
+
+     O Resultado é = <span></span> <br><br>
+
+     <p style="font-family:Verdana, Arial, Helvetica, sans-serif;">
+    “No triângulo retângulo, composto por um ângulo interno de 90° (ângulo reto),
+    a soma dos quadrados de seus catetos corresponde ao 
+    quadrado de sua hipotenusa.”</p>
+
+    </div>     
+    </div>
+    
+<script>
+    var n1 = document.querySelector('#n1')
+    var n2 = document.querySelector('#n2')
+    var n3 = document.querySelector('#n3')
+    var resultado = document.querySelector('span')
+
+ // a ideia aqui, é calcular a soma dos quadrados dos catetos para assim  
+ //descobrir o  quadrado da hipotenusa 
+    function calcular(){
+     resultado.innerHTML =
+      parseInt(n1.value) ** 2 
+     + parseInt(n2.value) ** 2  
+      / parseFloat (n3.value  ** 2 )  
+     }
+
+ //obs: colocar qualquer valor nos catetos e atribuir o valor de 1 a hipotenusa     
+
+</script>
+</body>
+</html><!-- Fim  CONTEUDO  -->
+
+
